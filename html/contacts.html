@@ -58,17 +58,17 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">CallMe24<span>.</span></a></h1>
+      <h1 class="logo"><a href="/">CallMe24<span>.</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+      <!-- <a href="/index" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="./index.html">UY</a></li>
-          <li><a class="nav-link scrollto " href="./services.html">XIZMATLAR</a></li>
-          <li><a class="nav-link scrollto" href="./about.html">BIZ HAQIMIZDA</a></li>
-          <!-- <li><a class="nav-link scrollto" href="./news.html">НОВОСТИ</a></li> -->
-          <li><a class="nav-link scrollto active" href="./contacts.html">ALOQALAR</a></li>
+          <li><a class="nav-link scrollto" href="/">UY</a></li>
+          <li><a class="nav-link scrollto " href="/services">XIZMATLAR</a></li>
+          <li><a class="nav-link scrollto" href="/about">BIZ HAQIMIZDA</a></li>
+          <!-- <li><a class="nav-link scrollto" href=".//news">НОВОСТИ</a></li> -->
+          <li><a class="nav-link scrollto active" href="/contacts">ALOQALAR</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -313,6 +313,192 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <div class="my-site-client-chat chat-hidden">
+    <div class="client-chat-box">
+      <div class="client-chat-box-top">
+        <div class="client-chat-box-top-avatar">
+          A
+        </div>
+        <div class="client-chat-box-admin-info">
+          <div>Admin</div>
+          <div class="client-chat-box-admin-info-status" style="color: lime;">Onlayn</div>
+        </div>
+      </div>
+      <div class="chat-box-center">
+        <div class="chat-messages">
+
+          
+
+        </div>
+      </div>
+      <div class="chat-sender-form">
+        <input id="message-text" placeholder="Xabar matni" type="text">
+        <button onclick="sendMessage()">Yuborish</button>
+      </div>
+    </div>
+    <button id="client-chat-toggler">
+      Chat
+    </button>
+  </div>
+  <style>
+    .my-site-client-chat {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      border-radius: 5px;
+      transition: all .3s ease-in;
+      z-index: 100;
+      overflow: hidden;
+      box-shadow: 0 0 20px #0004;
+    }
+    .my-site-client-chat.chat-hidden {
+      box-shadow: none;
+    }
+    .my-site-client-chat.chat-hidden .client-chat-box{
+      display: none;
+    }
+    .my-site-client-chat .client-chat-box-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-bottom: 1px solid rgb(185, 185, 185);
+    }
+    .my-site-client-chat .client-chat-box-top-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #0000ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+    }
+    .my-site-client-chat .client-chat-box-admin-info div:last-child{
+      color: gray;
+      font-size: 14px !important;
+    }
+    .my-site-client-chat .client-chat-box {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      width: 350px;
+    }
+    .my-site-client-chat .client-chat-box .chat-box-center {
+      height: 300px;
+      width: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      scroll-behavior: smooth;
+    }
+    .my-site-client-chat button{
+      height: 100%;
+      outline: none;
+      border: none;
+      width: 100%;
+      padding: 5px 10px;
+      background: #0000ff;
+      cursor: pointer;
+      color: white;
+    }
+    .my-site-client-chat .chat-messages {
+      width: 100%;
+      padding: 4px 0;
+    }
+    .my-site-client-chat .client-chat-box .chat-message{
+      display: flex;
+      align-items: center;
+      padding: 2px 4px;
+    }
+    .my-site-client-chat .client-chat-box .chat-message.me{
+      justify-content: end;
+    }
+    .my-site-client-chat .client-chat-box .chat-message.he{
+      justify-content: start;
+    }
+    .my-site-client-chat .chat-message-wrapper {
+      max-width: 220px;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+    .my-site-client-chat .client-chat-box .chat-message.me .chat-message-wrapper {
+      background: #0000ff;
+      color: white;
+    }
+    .my-site-client-chat .client-chat-box .chat-message.he .chat-message-wrapper {
+      background: white;
+      border: 1px solid gray;
+    }
+    .my-site-client-chat .chat-message-wrapper p {
+      font-size: 14px;
+      margin-bottom: 0 !important;
+    }
+    .my-site-client-chat .chat-message-wrapper .he span {
+      color: gray;
+    }
+    .my-site-client-chat .chat-message-wrapper .me span {
+      color: rgb(182, 181, 181);
+    }
+    .my-site-client-chat .chat-message-wrapper span {
+      font-size: 12px;
+      float: right;
+    }
+    .my-site-client-chat .chat-sender-form {
+      display: flex;
+      border-top: 1px solid #000;
+    }
+    .my-site-client-chat .chat-sender-form input{
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 0 8px;
+    }
+  </style>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+  <script>
+    const socket = io('')
+    const messagetext = document.getElementById('message-text')
+
+    messagetext.addEventListener('keydown', (e) => {
+      if(e.keyCode === 13) {
+          sendMessage()
+      }
+    })
+    document.getElementById('client-chat-toggler').addEventListener('click', () => {
+      document.getElementById('client-chat-toggler').remove()
+      document.querySelector('.my-site-client-chat').classList.toggle('chat-hidden')
+      socket.emit('client-entering')
+
+      socket.on('receive-from-bot', message => {
+        addMessage(message, 'he')
+      })
+    })
+
+    function sendMessage() {
+      if(!messagetext.value?.trim()) return
+      addMessage(messagetext.value, 'me')
+      socket.emit('send-to-admin', messagetext.value)
+      messagetext.value = ''
+      messagetext.focus()
+    }
+    
+    function addMessage(message, user) {
+      document.querySelector('.my-site-client-chat .chat-messages').innerHTML
+        += `
+        <div class="chat-message ${user}">
+          <div class="chat-message-wrapper">
+            <p>${message}</p>
+            <span>${new Date().toLocaleTimeString().slice(0,5)}</span>
+          </div>
+        </div>
+        `
+    }
+  </script>
 </body>
 
 </html>

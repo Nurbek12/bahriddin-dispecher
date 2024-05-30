@@ -23,6 +23,18 @@ app.get('/', async (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'index.html'))
 })
 
+app.get('/about', async (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'about.html'))
+})
+
+app.get('/services', async (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'services.html'))
+})
+
+app.get('/contacts', async (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'contacts.html'))
+})
+
 io.on('connection', socket => {
     users[socket.id] = socket;
 
