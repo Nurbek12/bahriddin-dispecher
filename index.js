@@ -77,3 +77,5 @@ bot.on('message', (msg) => {
 server.listen(5000, () => {
     console.log('server start...');
 })
+
+module.exports = app;
