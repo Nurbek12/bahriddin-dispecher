@@ -74,7 +74,7 @@ bot.on('message', (msg) => {
     }
 });
 
-server.listen(5000, () => {
+server.listen(process.env.PORT, () => {
     console.log('server start...');
 })
 

@@ -461,7 +461,7 @@ h6 {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/hero-bg.jpg") top left;
+  background: url("../img/1105.jpg") top left;
   background-size: cover;
   position: relative;
 }
@@ -1805,4 +1805,231 @@ section {
     text-align: center;
     padding: 2px 0;
   }
+}
+
+
+a {
+  color: #0a3a7e !important;
+}
+
+a:hover {
+  color: #1e4e9b !important;
+}
+
+#preloader:before {
+  border: 6px solid #0a3a7e !important;
+}
+
+.back-to-top {
+  background: #0a3a7e !important;
+}
+
+.back-to-top:hover {
+  background: #1e4e9b !important;
+}
+
+#topbar {
+  background: #0a3a7e !important;
+}
+
+.navbar > ul > li > a:before {
+  background-color: #0a3a7e !important;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
+  color: #0a3a7e !important;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
+  color: #0a3a7e !important;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+  color: #0a3a7e !important;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
+  color: #0a3a7e !important;
+}
+
+#hero h1 span {
+  color: #0a3a7e !important;
+}
+
+.section-title h2 {
+  color: #0a3a7e !important;
+}
+
+.section-title h3 span {
+  color: #0a3a7e !important;
+}
+
+.featured-services .icon-box:hover::before {
+  background: #0a3a7e !important;
+}
+
+.featured-services .icon i {
+  color: #0a3a7e !important;
+}
+
+
+.featured-services .icon-box:hover .icon i {
+  color: white !important;
+}
+
+.featured-services .icon-box:hover a {
+  color: white !important;
+}
+
+
+.about .content ul i {
+  color: #0a3a7e !important;
+}
+
+.skills .progress-bar {
+  background-color: #0a3a7e !important;
+}
+
+.counts .count-box i {
+  background: #0a3a7e !important;
+}
+
+.counts .count-box span {
+  color: #062b5b !important;
+}
+
+.services .icon-box .icon i {
+  color: #1e4e9b !important;
+}
+
+.services .icon-box:hover h4 a,
+.services .icon-box:hover .icon i {
+  color: #fff !important;
+  color: #0a3a7e !important;
+}
+
+.services .icon-box:hover .icon {
+  border-color: #0a3a7e !important;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #0a3a7e !important;
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+  color: #0a3a7e !important;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
+  color: #0a3a7e !important;
+}
+
+.portfolio .portfolio-item .portfolio-links a:hover {
+  color: #1e4e9b !important;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  border: 1px solid #0a3a7e !important;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #0a3a7e !important;
+}
+
+.team .member .social a {
+  color: white !important;
+  background: rgba(10, 58, 126, 0.8) !important;
+}
+
+.team .member .social a:hover {
+  background: #1e4e9b !important;
+}
+
+.pricing .box h4 {
+  color: #0a3a7e !important;
+}
+
+.pricing .box ul i {
+  color: #0a3a7e !important;
+}
+
+.pricing .btn-buy {
+  background: #0a3a7e !important;
+}
+
+.pricing .btn-buy:hover {
+  background: #1e4e9b !important;
+}
+
+.pricing .featured h3 {
+  background: #0a3a7e !important;
+}
+
+.pricing .advanced {
+  background: #0a3a7e !important;
+}
+
+.faq .faq-list .question {
+  color: #0d58ba !important;
+}
+
+.faq .faq-list .collapsed:hover {
+  color: #0a3a7e !important;
+}
+
+.contact .info-box i {
+  color: #0a3a7e !important;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: #0a3a7e !important;
+}
+
+.contact .php-email-form button[type=submit] {
+  background: #0a3a7e !important;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #1e4e9b !important;
+}
+
+#footer .footer-newsletter form input[type=submit] {
+  background: #0a3a7e !important;
+}
+
+#footer .footer-newsletter form input[type=submit]:hover {
+  background: #0d58ba !important;
+}
+
+#footer .footer-top .footer-contact h3 span {
+  color: #0a3a7e !important;
+}
+
+#footer .footer-top .footer-links ul i {
+  color: #0a3a7e !important;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #0a3a7e !important;
+}
+
+#footer .footer-top .social-links a {
+  color: white !important;
+  background: #0a3a7e !important;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #1e4e9b !important;
 }
