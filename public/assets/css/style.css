@@ -1865,6 +1865,10 @@ a:hover {
   color: #0a3a7e !important;
 }
 
+#hero .btn-get-started {
+  color: white !important;
+}
+
 .section-title h2 {
   color: #0a3a7e !important;
 }
