@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dafna EDU</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: BizLand
+  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="d-flex align-items-center">Sizning ishonchli kechayu kunduz qo'ng'iroq markazi!        </i>
+        <a href="tel:+998957575850"><i class="bi bi-phone d-flex align-items-center ms-4"><span>+998 95 757 58 50</span></i></a>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="/">Dafna EDU<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="/index" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="/">ASOSIY SAHIFA</a></li>
+          <li><a class="nav-link scrollto " href="/services">XIZMATLAR</a></li>
+          <li><a class="nav-link scrollto active" href="/about">BIZ HAQIMIZDA</a></li>
+          <!-- <li><a class="nav-link scrollto" href=".//news">НОВОСТИ</a></li> -->
+          <li><a class="nav-link scrollto" href="/subjects">FANLAR</a></li>
+          <li><a class="nav-link scrollto" href="/contacts">ALOQA</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    
+    <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Dafna EDU</h2>
+                <h3><span><%= {
+                  'math': 'Matematika', 'physic': 'Fizika', 'lyterature': 'Ona tili va Adabiyot',
+                  'history': 'Tarix', 'english': 'Ingliz tili', 'russian': 'Rus tili',
+                  'chemistry': 'Kimyo', 'biology': 'Biologiya', 'common': "Umumiy (Matematika, Ona tili, O'zb tarixi)",
+                }[subject] ?? "Fan" %></span> O'qituvchilari</h3>
+            </div>
+  
+            
+            <div class="row g-4">
+              <% if (teachers.length > 0) { %>
+                <% teachers.forEach(teacher => { %>
+                  <a class="col-md-4" href="/teacher/<%= teacher.id %>">
+                    <div class="card h-100 shadow-sm">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= teacher.name %></h5>
+                        <p class="card-text">
+                          <strong>Tajribasi:</strong> <%= teacher.experience %> yil<br>
+                          <strong>Oylik kurs narxi:</strong> $<%= teacher.price %> ming so'm<br>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                <% }) %>
+              <% } else { %>
+                <p>No teachers found for this subject.</p>
+              <% } %>
+            </div>
+
+        </div>
+      </section>
+    
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Dafna EDU<span>.</span></h3>
+            <p>
+              Qozizoda Rumiy 17 <br>
+              Samarqand shahar<br>
+              O'zbekiston <br><br>
+              <strong>Phone:</strong> <a href="tel:+998957575850">+998 95 757 58 50</a><br>
+              <strong>Email:</strong> bafoqulovbahriddin@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Foydali havolalar</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Asosiy sahifa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Biz haqimizda </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Xizmatlar</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Xizmat ko'rsatish shartlari              </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Maxfiylik siyosati              </a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Bizning xizmatlarimiz            </h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Bizning ijtimoiy tarmoqlarimiz            </h4>
+            <p></p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Dafna EDU</span></strong>. Barcha huquqlar himoyalangan
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+         <a href="https://bootstrapmade.com/">Bafoqulov Bahriddin</a> tomonidan ishlab chiqilgan
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js"></script>
+
+  <div class="my-site-client-chat chat-hidden">
+    <div class="client-chat-box">
+      <div class="client-chat-box-top">
+        <div class="client-chat-box-top-avatar">
+          A
+        </div>
+        <div class="client-chat-box-admin-info">
+          <div>Admin</div>
+          <div class="client-chat-box-admin-info-status" style="color: lime;">Onlayn</div>
+        </div>
+      </div>
+      <div class="chat-box-center">
+        <div class="chat-messages">
+
+          
+
+        </div>
+      </div>
+      <div class="chat-sender-form">
+        <input id="message-text" placeholder="Xabar matni" type="text">
+        <button onclick="sendMessage()">Yuborish</button>
+      </div>
+    </div>
+    <button id="client-chat-toggler">
+      Chat
+    </button>
+  </div>
+  <style>
+    .my-site-client-chat {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      border-radius: 5px;
+      transition: all .3s ease-in;
+      z-index: 100;
+      overflow: hidden;
+      box-shadow: 0 0 20px #0004;
+    }
+    .my-site-client-chat.chat-hidden {
+      box-shadow: none;
+    }
+    .my-site-client-chat.chat-hidden .client-chat-box{
+      display: none;
+    }
+    .my-site-client-chat .client-chat-box-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-bottom: 1px solid rgb(185, 185, 185);
+    }
+    .my-site-client-chat .client-chat-box-top-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #1e4e9b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+    }
+    .my-site-client-chat .client-chat-box-admin-info div:last-child{
+      color: gray;
+      font-size: 14px !important;
+    }
+    .my-site-client-chat .client-chat-box {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      width: 350px;
+    }
+    .my-site-client-chat .client-chat-box .chat-box-center {
+      height: 300px;
+      width: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      scroll-behavior: smooth;
+    }
+    .my-site-client-chat button{
+      height: 100%;
+      outline: none;
+      border: none;
+      width: 100%;
+      padding: 5px 10px;
+      background: #1e4e9b;
+      cursor: pointer;
+      color: white;
+    }
+    .my-site-client-chat .chat-messages {
+      width: 100%;
+      padding: 4px 0;
+    }
+    .my-site-client-chat .client-chat-box .chat-message{
+      display: flex;
+      align-items: center;
+      padding: 2px 4px;
+    }
+    .my-site-client-chat .client-chat-box .chat-message.me{
+      justify-content: end;
+    }
+    .my-site-client-chat .client-chat-box .chat-message.he{
+      justify-content: start;
+    }
+    .my-site-client-chat .chat-message-wrapper {
+      max-width: 220px;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+    .my-site-client-chat .client-chat-box .chat-message.me .chat-message-wrapper {
+      background: #1e4e9b;
+      color: white;
+    }
+    .my-site-client-chat .client-chat-box .chat-message.he .chat-message-wrapper {
+      background: white;
+      border: 1px solid gray;
+    }
+    .my-site-client-chat .chat-message-wrapper p {
+      font-size: 14px;
+      margin-bottom: 0 !important;
+    }
+    .my-site-client-chat .chat-message-wrapper .he span {
+      color: gray;
+    }
+    .my-site-client-chat .chat-message-wrapper .me span {
+      color: rgb(182, 181, 181);
+    }
+    .my-site-client-chat .chat-message-wrapper span {
+      font-size: 12px;
+      float: right;
+    }
+    .my-site-client-chat .chat-sender-form {
+      display: flex;
+      border-top: 1px solid #000;
+    }
+    .my-site-client-chat .chat-sender-form input{
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 0 8px;
+    }
+  </style>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+  <script>
+    const socket = io('')
+    const messagetext = document.getElementById('message-text')
+
+    messagetext.addEventListener('keydown', (e) => {
+      if(e.keyCode === 13) {
+          sendMessage()
+      }
+    })
+    document.getElementById('client-chat-toggler').addEventListener('click', () => {
+      document.getElementById('client-chat-toggler').remove()
+      document.querySelector('.my-site-client-chat').classList.toggle('chat-hidden')
+      socket.emit('client-entering')
+
+      socket.on('receive-from-bot', message => {
+        addMessage(message, 'he')
+      })
+    })
+
+    function sendMessage() {
+      if(!messagetext.value?.trim()) return
+      addMessage(messagetext.value, 'me')
+      socket.emit('send-to-admin', messagetext.value)
+      messagetext.value = ''
+      messagetext.focus()
+    }
+    
+    function addMessage(message, user) {
+      document.querySelector('.my-site-client-chat .chat-messages').innerHTML
+        += `
+        <div class="chat-message ${user}">
+          <div class="chat-message-wrapper">
+            <p>${message}</p>
+            <span>${new Date().toLocaleTimeString().slice(0,5)}</span>
+          </div>
+        </div>
+        `
+    }
+  </script>
+
+</body>
+
+</html>

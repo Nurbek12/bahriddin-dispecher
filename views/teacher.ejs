@@ -10,22 +10,22 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: BizLand
@@ -65,9 +65,10 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="/">ASOSIY SAHIFA</a></li>
-          <li><a class="nav-link scrollto active" href="/services">XIZMATLAR</a></li>
-          <li><a class="nav-link scrollto" href="/about">BIZ HAQIMIZDA</a></li>
+          <li><a class="nav-link scrollto " href="/services">XIZMATLAR</a></li>
+          <li><a class="nav-link scrollto active" href="/about">BIZ HAQIMIZDA</a></li>
           <!-- <li><a class="nav-link scrollto" href=".//news">НОВОСТИ</a></li> -->
+          <li><a class="nav-link scrollto" href="/subjects">FANLAR</a></li>
           <li><a class="nav-link scrollto" href="/contacts">ALOQA</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -77,53 +78,65 @@
   </header><!-- End Header -->
 
   <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Dafna EDU</h2>
-          <h3>Sifatli <span>xizmatlar</span></h3>
-          <p>qo'ng'iroq markazi - biznesingizda muvaffaqiyat          </p>
-        </div>
-
-      
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <img src="assets/img/17261.jpg" class="img-fluid" alt="">
+    
+    <div class="container py-5">
+        <h1 class="mb-4"><%= teacher.name %></h1>
+        <p><strong>Tajribasi:</strong> <%= teacher.experience %> yil</p>
+        <p><strong>Oylik kurs narxi:</strong> <%= teacher.price %> ming so'm</p>
+        <p><strong>Fan:</strong> <%= {
+            'math': 'Matematika', 'physic': 'Fizika', 'lyterature': 'Ona tili va Adabiyot',
+            'history': 'Tarix', 'english': 'Ingliz tili', 'russian': 'Rus tili',
+            'chemistry': 'Kimyo', 'biology': 'Biologiya', 'common': "Umumiy (Matematika, Ona tili, O'zb tarixi)",
+          }[teacher.subject] ?? "Fan" %></p>
+    
+        <div class="row g-4 mt-5">
+          <!-- Even days card -->
+          <div class="col-md-6">
+            <div class="card shadow" id="evenCard">
+              <div class="card-body">
+                <h5 class="card-title">Haftaning juft kunlari</h5>
+                <button class="btn btn-primary" onclick="openModal('even')" id="evenBtn">Qabulga yozilish</button>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <p>"Dafna EDU" qo'ng'iroq markazining ofisi katta hajmdagi kiruvchi va chiquvchi telefon qo'ng'iroqlarini qayta ishlash uchun yaratilgan. Ushbu qo'ng'iroqlarni qayta ishlashni autsorsing qilish xodimlarni, ofis maydonini, jihozlarni va boshqa qo'shimcha xarajatlarni tejash imkonini beradi.            </p>
-            <ul>
-              <li>
-                <i class="bx bx-store-alt"></i>
-                <div>
-                  <h5>24/7 xizmat                  </h5>
-                  <p>Call-markaz operatorlari 24/7 ishlaydi va har doim qo'ng'iroqlarga javob beradi: ertalab, tushdan keyin, kechqurun va dam olish kunlari.                  </p>
-                </div>
-              </li>
-              <li>
-                <i class="bx bx-images"></i>
-                <div>
-                  <h5>Maslahatlarni operativ ko'rsatish                  </h5>
-                  <p>Mijozlaringizning barcha qo'ng'iroqlariga jonli odamlar - professional qo'ng'iroq markazi operatorlari javob berishadi, biz javob berish mashinalaridan foydalanmaymiz.                  </p>
-                </div>
-              </li>
-              <li>
-                <i class="bx bx-images"></i>
-                <div>
-                  <h5>Barcha operatsiyalarni audioyozuv                  </h5>
-                  <p>Mutlaqo barcha xabarlar avtomatik tarzda saqlanadi, bu bizning mijozlarimizga telefon qo'ng'iroqlari soni va barcha qo'ng'iroqlarni qayta ishlash sifati haqida 100% ishonchli ma'lumot olish imkonini beradi....                  </p>
-                </div>
-              </li>
-            </ul>
+    
+          <!-- Odd days card -->
+          <div class="col-md-6">
+            <div class="card shadow" id="oddCard">
+              <div class="card-body">
+                <h5 class="card-title">Haftaning toq kunlari</h5>
+                <button class="btn btn-primary" onclick="openModal('odd')" id="oddBtn">Qabulga yozilish</button>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
-    </section><!-- End About Section -->
 
+      <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+          <form class="modal-content" id="bookingForm" onsubmit="handleFormSubmit(event)">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitle">Qabulga yozilish</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" id="formType" name="type">
+              <div class="mb-3">
+                <label for="studentName" class="form-label">Ism familiya</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="time" class="form-label">Telefon raqami</label>
+                <input type="text" class="form-control" id="phone" name="time" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Yozilish</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -147,7 +160,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Foydali havolalar</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Uy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Asosiy sahifa</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Biz haqimizda </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Xizmatlar</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Xizmat ko'rsatish shartlari              </a></li>
@@ -200,17 +213,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
 
   <div class="my-site-client-chat chat-hidden">
     <div class="client-chat-box">
@@ -397,6 +410,86 @@
         </div>
         `
     }
+  </script>
+
+ <script>
+    const teacherId = "<%= teacher.id %>";
+    const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
+    let currentType = '';
+
+    async function openModal(type) {
+        const key = `formData_${teacherId}_${type}`;
+        const existing = localStorage.getItem(key);
+        const formdata = localStorage.getItem('formData');
+
+        if (existing) {
+          alert('Ushbu kursga allaqachon yozilgansiz!');
+          return;
+        }
+
+        if(formdata) {
+          const res = await fetch('/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({...JSON.parse(formdata), type, teacherId })
+          });
+
+          if (res.ok) {
+            document.getElementById(`${type}Btn`).disabled = true;
+            alert('Qabulga yozildingiz!');
+          } else {
+            alert('Qabulga yozilishda xatolik yuz berdi.');
+          }
+          return
+        }
+
+        currentType = type;
+        document.getElementById('formType').value = type;
+        document.getElementById('modalTitle').textContent = `Haftaning ${type === 'even' ? 'juft' : 'toq'} kunlariga yozilish`;
+        modal.show();
+    }
+
+    async function handleFormSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+
+        const formData = { name, phone, teacherId, type: currentType };
+        const key = `formData_${teacherId}_${currentType}`;
+
+        try {
+            // Send to backend
+            const res = await fetch('/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (res.ok) {
+                // Save to localStorage
+                localStorage.setItem(key, JSON.stringify(formData));
+                localStorage.setItem('formData', JSON.stringify({name, phone}));
+                
+                document.getElementById(`${currentType}Btn`).disabled = true;
+                modal.hide();
+                alert('Qabulga yozildingiz!');
+            } else {
+                alert('Qabulga yozilishda xatolik yuz berdi.');
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Qabulga yozilishda xatolik yuz berdi.');
+        }
+    }
+
+    // Disable buttons if already booked
+    ['even', 'odd'].forEach(type => {
+        const key = `formData_${teacherId}_${type}`;
+        if (localStorage.getItem(key)) {
+        const btn = document.getElementById(`${type}Btn`);
+        if (btn) btn.disabled = true;
+        }
+    });
   </script>
 </body>
 
